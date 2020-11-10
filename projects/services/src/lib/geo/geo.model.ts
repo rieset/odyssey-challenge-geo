@@ -5,7 +5,7 @@ export interface GeoContractModel {
   zoom: number
   address: string
   point: {lat: number, lng: number}
-  assistants: any[]
+  assistants: GeoContractPublicAssistanceModel[]
 }
 
 export interface GeoContractUpdatedModel extends GeoContractModel {
@@ -13,4 +13,10 @@ export interface GeoContractUpdatedModel extends GeoContractModel {
   contain: boolean
 }
 
-export type GeoLayersModel = GeoContractUpdatedModel[][];
+export interface GeoContractPublicAssistanceModel {
+  alias: string
+  color: string
+  certificates: string
+}
+
+export type GeoLayersModel = GeoContractUpdatedModel[][]

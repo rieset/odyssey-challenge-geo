@@ -2,7 +2,7 @@ export const environment = {
   production: true,
 
   apis: {
-    nodes: 'https://testnodes.wavesnodes.com.com',
+    nodes: 'https://testnodes.wavesnodes.com',
     rest: 'https://nodes-testnet.wavesnodes.com',
     contractAddress: '3N1eyWNffhxPCmYBWBdnWbhmAVAVjkTEqY5',
     geo: 'https://waves-challenge-backend.herokuapp.com/',

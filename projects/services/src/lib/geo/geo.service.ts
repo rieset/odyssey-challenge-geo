@@ -10,7 +10,8 @@ import {
 } from 'rxjs/operators'
 import {
   GeoContractModel,
-  GeoLayersModel
+  GeoContractPublicAssistanceModel,
+  GeoLayersModel,
 } from './geo.model'
 
 @Injectable({
@@ -54,7 +55,7 @@ export class GeoService {
     return this.geoLayers$.pipe(take(1))
   }
 
-  public registerToContract (address: string, data: any) {
+  public registerToContract (address: string, data: GeoContractPublicAssistanceModel) {
     return this.http.post<void>(this.apiRegisterOnContract.href + '/' + address, data, {
       headers: {
         accept: 'application/json; charset=utf-8'
