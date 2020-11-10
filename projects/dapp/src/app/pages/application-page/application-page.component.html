@@ -1,3 +1,21 @@
-<div class="container">
-    <p>application-page works!</p>
+<div class="application" *ngIf="contracts$ | async as contracts">
+    <agm-map minZoom="12" maxZoom="17" class="application__map" [latitude]="lat" [longitude]="lng">
+        <agm-polygon strokeWeight="1" [fillColor]="contract.assistants.length > 0 ? 'rgba(255,34,52,0.05)' : 'rgba(27,34,52,0.05)'" strokeColor="rgba(27,34,52,.3)" *ngFor="let contract of contracts;trackBy: trackByFn" [paths]="contract.point | hexagon">
+<!--            <agm-circle-->
+<!--                    *ngFor="let assistant of contract.assistants;trackBy: trackByFn"-->
+<!--                    [longitude]="contract.point.lng"-->
+<!--                    [latitude]="contract.point.lat"-->
+<!--                    [fillColor]="assistant.color"-->
+<!--                    [radius]="10"-->
+<!--            ></agm-circle>-->
+
+            <agm-polygon
+                    *ngFor="let assistant of contract.assistants;trackBy: trackByFn"
+                    strokeWeight="1" [fillColor]="assistant.color"
+                    strokeColor="rgba(27,34,52,.3)"
+                    [paths]="contract.point | hexagon: 100"
+            ></agm-polygon>
+        </agm-polygon>
+
+    </agm-map>
 </div>

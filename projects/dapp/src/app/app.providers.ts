@@ -9,6 +9,8 @@ export interface AppApiInterface {
   nodes: string
   rest: string
   contractAddress: string
+  geo: string
+  googleMaps: string
 }
 
 export const APP_CONSTANTS = new InjectionToken<Type<AppConstantsInterface>>('Application constants')

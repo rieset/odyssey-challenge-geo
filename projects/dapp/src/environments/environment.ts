@@ -11,14 +11,16 @@ export const environment = {
     nodes: 'https://testnodes.wavesnodes.com',
     rest: 'https://nodes-testnet.wavesnodes.com',
     // contractAddress: '3MvqnYLwBErxGtKzeEjgWgr2RXgniokicR2'
-    contractAddress: '3N1eyWNffhxPCmYBWBdnWbhmAVAVjkTEqY5'
+    contractAddress: '3N1eyWNffhxPCmYBWBdnWbhmAVAVjkTEqY5',
+    geo: 'http://localhost:3000',
+    googleMaps: 'AIzaSyACN_pRwBJA4Vqb3PMOCXTJCXnUtbeTXgU'
   },
 
   // Routing constants on page
   routing: {
-    listing: '',
+    listing: 'listing',
     entity: 'entity/:entityId',
-    application: 'entity/:entityId/application',
+    application: '',
     about: 'about',
     applyGrant: 'apply-grant/:entityId',
     setting: 'settings',
