@@ -1,7 +1,7 @@
 export interface GeoContractEmergencyModel {
-  privateData: string;
+  privateData: string
   status: 'new' | 'resolved' | 'rejected'
-  emergencyUuid: string;
+  emergencyUuid: string
 }
 
 export interface GeoContractModel {

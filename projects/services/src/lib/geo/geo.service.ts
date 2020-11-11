@@ -47,7 +47,7 @@ export class GeoService {
   public get geoContracts (): Observable<GeoContractModel[]> {
     return this.geoContracts$.pipe(
       map((contracts) => {
-        console.log('contracts', contracts);
+        console.log('contracts', contracts)
 
         return contracts.map((contract) => {
           return {
