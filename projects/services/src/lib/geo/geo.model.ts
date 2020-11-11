@@ -1,3 +1,9 @@
+export interface GeoContractEmergencyModel {
+  privateData: string;
+  status: 'new' | 'resolved' | 'rejected'
+  emergencyUuid: string;
+}
+
 export interface GeoContractModel {
   x: number
   y: number
@@ -6,6 +12,7 @@ export interface GeoContractModel {
   address: string
   point: {lat: number, lng: number}
   assistants: GeoContractPublicAssistanceModel[]
+  emergency: GeoContractEmergencyModel[]
 }
 
 export interface GeoContractUpdatedModel extends GeoContractModel {

@@ -1,14 +1,21 @@
 <div class="application" *ngIf="contracts$ | async as contracts">
-    <agm-map minZoom="12" maxZoom="17" class="application__map" [latitude]="lat" [longitude]="lng">
-        <agm-polygon strokeWeight="1" [fillColor]="contract.assistants.length > 0 ? 'rgba(255,34,52,0.05)' : 'rgba(27,34,52,0.05)'" strokeColor="rgba(27,34,52,.3)" *ngFor="let contract of contracts;trackBy: trackByFn" [paths]="contract.point | hexagon">
-<!--            <agm-circle-->
-<!--                    *ngFor="let assistant of contract.assistants;trackBy: trackByFn"-->
-<!--                    [longitude]="contract.point.lng"-->
-<!--                    [latitude]="contract.point.lat"-->
-<!--                    [fillColor]="assistant.color"-->
-<!--                    [radius]="10"-->
-<!--            ></agm-circle>-->
-
+    <agm-map
+            minZoom="12"
+            maxZoom="17"
+            class="application__map"
+            [latitude]="lat"
+            [longitude]="lng"
+            [zoom]="12"
+            [disableDefaultUI]="true"
+            [restriction]="{latLngBounds: {north: lat + .1, south: lat - .05, west: lng -.2, east: lng + .2}}"
+    >
+        <agm-polygon
+                [strokeWeight]="contract.emergency.length > 0 ? 5 : 1"
+                [fillColor]="contract.assistants.length > 0 ? 'rgba(255,34,52,0.05)' : 'rgba(27,34,52,0.05)'"
+                [strokeColor]="contract.emergency.length > 0 ? 'rgba(227,34,52,.5)' : 'rgba(27,34,52,.3)'"
+                *ngFor="let contract of contracts;trackBy: trackByFn"
+                [paths]="contract.point | hexagon"
+        >
             <agm-polygon
                     *ngFor="let assistant of contract.assistants;trackBy: trackByFn"
                     strokeWeight="1" [fillColor]="assistant.color"
@@ -16,6 +23,5 @@
                     [paths]="contract.point | hexagon: 100"
             ></agm-polygon>
         </agm-polygon>
-
     </agm-map>
 </div>

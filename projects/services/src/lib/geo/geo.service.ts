@@ -3,6 +3,7 @@ import { API, AppApiInterface } from '@constants'
 import { HttpClient } from '@angular/common/http'
 import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs'
 import {
+  map,
   publishReplay,
   refCount,
   repeatWhen,
@@ -45,8 +46,17 @@ export class GeoService {
 
   public get geoContracts (): Observable<GeoContractModel[]> {
     return this.geoContracts$.pipe(
-      tap((data) => {
-        console.log('get contacts')
+      map((contracts) => {
+        console.log('contracts', contracts);
+
+        return contracts.map((contract) => {
+          return {
+            ...contract,
+            emergency: contract.emergency.filter((emergency) => {
+              return emergency.status === 'new'
+            })
+          }
+        })
       })
     )
   }
