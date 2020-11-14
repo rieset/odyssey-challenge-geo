@@ -12,7 +12,6 @@ import { FooterComponent } from '@ui/footer/footer.component'
 import { HttpClientModule } from '@angular/common/http'
 import { TranslocoRootModule } from './transloco/transloco-root.module'
 import { HeaderModule } from '@ui/header/header.module'
-import { CollapseContainerModule } from '@ui/collapse-container/collapse-container.module'
 import { TagModule } from '@ui/tag/tag.module'
 import { FooterModule } from '@ui/footer/footer.module'
 import { NgProgressModule } from 'ngx-progressbar'
@@ -38,7 +37,6 @@ import { environment } from '../environments/environment'
     HttpClientModule,
     TranslocoRootModule,
     HeaderModule,
-    CollapseContainerModule,
     TagModule,
     FooterModule,
     PipesModule,

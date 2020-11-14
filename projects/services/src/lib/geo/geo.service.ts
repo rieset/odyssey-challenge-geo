@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core'
 import { API, AppApiInterface } from '@constants'
 import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs'
+import { interval, Observable } from 'rxjs'
 import {
   map,
   publishReplay,
@@ -47,8 +47,6 @@ export class GeoService {
   public get geoContracts (): Observable<GeoContractModel[]> {
     return this.geoContracts$.pipe(
       map((contracts) => {
-        console.log('contracts', contracts)
-
         return contracts.map((contract) => {
           return {
             ...contract,
