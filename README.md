@@ -1,7 +1,7 @@
-# Waves Grants
+# Waves Challenge Operator Prototype
 
-[![Linter](https://github.com/rieset/waves-grants/workflows/Linter/badge.svg)](https://github.com/rieset/waves-grants/actions)
-[![Testing](https://github.com/rieset/waves-grants/workflows/Testing/badge.svg)](https://github.com/rieset/waves-grants/actions)
+[![Linter](https://github.com/rieset/odyssey-challenge-geo/workflows/Linter/badge.svg)](https://github.com/rieset/odyssey-challenge-geo/actions)
+[![Testing](https://github.com/rieset/odyssey-challenge-geo/workflows/Testing/badge.svg)](https://github.com/rieset/wodyssey-challenge-geo/actions)
 
 ## Modules
 
