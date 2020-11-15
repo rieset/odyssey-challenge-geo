@@ -49,10 +49,7 @@ export class GeoService {
       map((contracts) => {
         return contracts.map((contract) => {
           return {
-            ...contract,
-            emergency: contract.emergency.filter((emergency) => {
-              return emergency.status === 'new'
-            })
+            ...contract
           }
         })
       })
