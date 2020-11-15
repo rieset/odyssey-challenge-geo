@@ -12,7 +12,7 @@ export interface GeoContractModel {
   address: string
   point: {lat: number, lng: number}
   assistants: GeoContractPublicAssistanceModel[]
-  emergency: GeoContractEmergencyModel[]
+  emergency: string
 }
 
 export interface GeoContractUpdatedModel extends GeoContractModel {
